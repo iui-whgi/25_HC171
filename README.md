@@ -47,20 +47,12 @@ Meta Quest 2 VR 헤드셋을 활용하여 OpenManipulator-X 로봇을 직관적�
 ### Single Arm VR 제어
 ![Single Arm Demo](MetaQuest_Teleopearation/assets/IMG_1756.gif)
 
-*Meta Quest 2 VR 컨트롤러로 OpenManipulator-X 로봇을 실시간 제어*
+*Meta Quest 2 VR 컨트롤러로 한팔 OpenManipulator-X 로봇을 실시간 제어*
 
 ### Dual Arm VR 제어
 ![Dual Arm Demo](MetaQuest_Teleopearation/assets/IMG_1862.gif)
 
-*양팔 로봇 동시 제어 - WiFi 도시락을 사용해 장소 제한 없이 구현*
-
-### Joint-Pose 매핑 예시
-
-![왼쪽 최대 위치](MetaQuest_Teleopearation/assets/왼쪽최대위.png)
-*목표 위치에서의 MuJoCo 환경에서의 joint 값*
-
-![왼쪽 최대 위치 상세](MetaQuest_Teleopearation/assets/왼쪽최대위11.png)
-*목표 위치에서의 Meta Quest 컨트롤러 pose 값*
+*양팔 로봇 동시 제어 *
 
 ## 주요 성과
 - Single Arm 및 Dual Arm VR 제어 구현
@@ -123,11 +115,12 @@ VR-로봇 매핑 데이터 수집 도구
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
 
-## 참고 문서
+## 상세 설명 (링크 클릭하시면 상세한 설명이 있습니다.)
 - [VR 시스템 상세](MetaQuest_Teleopearation/vr_teleoperation/README.md)
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
