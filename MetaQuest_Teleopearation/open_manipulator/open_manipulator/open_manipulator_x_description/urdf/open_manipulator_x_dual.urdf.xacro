@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!-- Dual Arm OpenManipulator Configuration -->
+<robot name="open_manipulator_x_dual" xmlns:xacro="http://ros.org/wiki/xacro">
+  
+  <!-- Import single arm URDF -->
+  <xacro:include filename="$(find open_manipulator_x_description)/urdf/open_manipulator_x.urdf.xacro" />
+  
+  <!-- Import ros2_control hardware interface -->
+  <xacro:include filename="$(find open_manipulator_x_description)/ros2_control/open_manipulator_x_system.ros2_control.xacro" />
+  
+  <!-- Arguments -->
+  <xacro:arg name="use_sim" default="false" />
+  <xacro:arg name="use_fake_hardware" default="false" />
+  <xacro:arg name="fake_sensor_commands" default="false" />
+  <xacro:arg name="port_name" default="/dev/ttyACM0" />
+  
+  <!-- World link -->
+  <link name="world"/>
+  
+  <!-- Base platform for dual arms -->
+  <link name="base_platform">
+    <visual>
+      <geometry>
+        <box size="0.3 0.5 0.02"/>
+      </geometry>
+      <material name="grey">
+        <color rgba="0.5 0.5 0.5 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.3 0.5 0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.5"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0" iyy="0.01" iyz="0.0" izz="0.01"/>
+    </inertial>
+  </link>
+  
+  <!-- Fix base to world -->
+  <joint name="world_to_base" type="fixed">
+    <parent link="world"/>
+    <child link="base_platform"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <!-- Left Arm -->
+  <xacro:open_manipulator_x prefix="left_" />
+  
+  <joint name="base_to_left_arm" type="fixed">
+    <parent link="base_platform"/>
+    <child link="left_link1"/>
+    <origin xyz="0 -0.15 0.01" rpy="0 0 0"/>
+  </joint>
+  
+  <!-- Right Arm -->
+  <xacro:open_manipulator_x prefix="right_" />
+  
+  <joint name="base_to_right_arm" type="fixed">
+    <parent link="base_platform"/>
+    <child link="right_link1"/>
+    <origin xyz="0 0.15 0.01" rpy="0 0 0"/>
+  </joint>
+  
+  <!-- ros2_control hardware interface for dual arms -->
+  <ros2_control name="DualArmSystem" type="system">
+    <hardware>
+      <xacro:if value="$(arg use_fake_hardware)">
+        <plugin>mock_components/GenericSystem</plugin>
+        <param name="fake_sensor_commands">$(arg fake_sensor_commands)</param>
+        <param name="state_following_offset">0.0</param>
+      </xacro:if>
+      <xacro:unless value="$(arg use_fake_hardware)">
+        <xacro:if value="$(arg use_sim)">
+          <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </xacro:if>
+        <xacro:unless value="$(arg use_sim)">
+          <plugin>open_manipulator_x_hardware/OpenManipulatorXDualHardware</plugin>
+          <param name="port_name">$(arg port_name)</param>
+          <param name="baud_rate">1000000</param>
+          <param name="left_arm_id_base">11</param>
+          <param name="right_arm_id_base">21</param>
+        </xacro:unless>
+      </xacro:unless>
+    </hardware>
+    
+    <!-- Left arm joints -->
+    <joint name="left_joint1">
+      <command_interface name="position">
+        <param name="min">-2.827</param>
+        <param name="max">2.827</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <param name="motor_id">11</param>
+    </joint>
+    
+    <joint name="left_joint2">
+      <command_interface name="position">
+        <param name="min">-1.571</param>
+        <param name="max">1.571</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <param name="motor_id">12</param>
+    </joint>
+    
+    <joint name="left_joint3">
+      <command_interface name="position">
+        <param name="min">-1.530</param>
+        <param name="max">1.571</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <param name="motor_id">13</param>
+    </joint>
+    
+    <joint name="left_joint4">
+      <command_interface name="position">
+        <param name="min">-1.921</param>
+        <param name="max">1.921</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <param name="motor_id">14</param>
+    </joint>
+    
+    <joint name="left_gripper">
+      <command_interface name="position">
+        <param name="min">-0.010</param>
+        <param name="max">0.019</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <param name="motor_id">15</param>
+    </joint>
+    
+    <!-- Right arm joints -->
+    <joint name="right_joint1">
+      <command_interface name="position">
+        <param name="min">-2.827</param>
+        <param name="max">2.827</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <param name="motor_id">21</param>
+    </joint>
+    
+    <joint name="right_joint2">
+      <command_interface name="position">
+        <param name="min">-1.571</param>
+        <param name="max">1.571</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <param name="motor_id">22</param>
+    </joint>
+    
+    <joint name="right_joint3">
+      <command_interface name="position">
+        <param name="min">-1.530</param>
+        <param name="max">1.571</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <param name="motor_id">23</param>
+    </joint>
+    
+    <joint name="right_joint4">
+      <command_interface name="position">
+        <param name="min">-1.921</param>
+        <param name="max">1.921</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <param name="motor_id">24</param>
+    </joint>
+    
+    <joint name="right_gripper">
+      <command_interface name="position">
+        <param name="min">-0.010</param>
+        <param name="max">0.019</param>
+      </command_interface>
+      <state_interface name="position"/>
+      <state_interface name="velocity"/>
+      <param name="motor_id">25</param>
+    </joint>
+  </ros2_control>
+  
+</robot>

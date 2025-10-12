@@ -1,0 +1,82 @@
+controller_manager:
+  ros__parameters:
+    use_sim_time: False
+    update_rate: 100  # Hz
+
+    # 하드웨어 인터페이스 설정 추가
+    hardware_components:
+      - open_manipulator_dual_hardware
+    
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+    arm_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
+
+    gripper_controller:
+      type: position_controllers/GripperActionController
+
+# 하드웨어 컴포넌트 설정
+open_manipulator_dual_hardware:
+  ros__parameters:
+    port_name: /dev/ttyACM0
+    baud_rate: 1000000
+    
+    # 모터 ID 매핑
+    motor_ids:
+      # 왼팔
+      left_joint1: 11
+      left_joint2: 12
+      left_joint3: 13
+      left_joint4: 14
+      left_gripper: 15
+      # 오른팔
+      right_joint1: 21
+      right_joint2: 22
+      right_joint3: 23
+      right_joint4: 24
+      right_gripper: 25
+
+arm_controller:
+  ros__parameters:
+    joints:
+      # 왼팔 (ID 11-14)
+      - left_joint1
+      - left_joint2
+      - left_joint3
+      - left_joint4
+      # 오른팔 (ID 21-24)
+      - right_joint1
+      - right_joint2
+      - right_joint3
+      - right_joint4
+
+    interface_name: position
+
+    command_interfaces:
+      - position
+
+    state_interfaces:
+      - position
+      - velocity
+
+    state_publish_rate: 200.0
+    action_monitor_rate: 20.0
+
+    allow_partial_joints_goal: false
+    open_loop_control: true
+    allow_integration_in_goal_trajectories: true
+    constraints:
+      stopped_velocity_tolerance: 0.01
+      goal_time: 0.0
+
+gripper_controller:
+  ros__parameters:
+    joints:
+      - left_gripper
+      - right_gripper
+    state_interfaces:
+      - position
+    command_interfaces:
+      - position
+    conversion_factor: 0.0001
