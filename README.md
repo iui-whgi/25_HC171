@@ -14,8 +14,22 @@ MetaQuest_Teleopearation(숭실대팀) - 텔레오퍼레이션했던거 다정�
 #이 Read Me에 각 디렉별 설명 다 기입해주시면됩니다 . 다 이 제일상위 Readme에 다 명세해주세요
 
 # DataCollection
+직접 작성한 record.sh 파일 실행하여 데이터셋 수집
 
----
+##하드웨어 구성
+###Follower 로봇 (bi_so101_follower)
+왼팔: /dev/ttyACM0
+오른팔: /dev/ttyACM1
+설정 위치: lerobot/common/robot_devices/robots/configs.py - BiSO101FollowerConfig 클래스
+###Leader 로봇 (bi_so101_leader)
+왼팔: /dev/ttyACM2
+오른팔: /dev/ttyACM3
+설정 위치: lerobot/common/robot_devices/robots/configs.py - BiSO101LeaderConfig 클래스
+###카메라: 4대의 OpenCV 카메라
+정면 카메라: index 0
+상단 카메라: index 2
+왼쪽 카메라: index 4
+오른쪽 카메라: index 6
 
 # TrainAndDelpoy
 
@@ -121,6 +135,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
