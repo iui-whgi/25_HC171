@@ -73,19 +73,18 @@ python scripts/inference_service.py \
     --data-config so101
 터미널에서 위 명령어를 실행하여 서버 실행
 ### 각 파라미터 설명
-1. python scripts/inference_service.py
+- python scripts/inference_service.py
 
 추론 서비스 스크립트 실행
 
 학습된 모델을 로드하고 서버로 실행
-
-2. --server
+- --server
 
 서버 모드로 실행
 
 로봇의 요청을 받아 AI 추론 결과를 반환
 
-3. --http-server
+- --http-server
 
 HTTP 프로토콜 사용
 
@@ -93,11 +92,11 @@ REST API 형태로 통신 가능
 
 로봇이 HTTP 요청으로 다음 동작을 물어봄
 
-4. --model-path {모델 경로}
+- --model-path {모델 경로}
 
 학습된 모델의 경로 지정
 
-5. --embodiment-tag new-embodiment
+- --embodiment-tag new-embodiment
 
 로봇의 물리적 구성(embodiment) 태그
 
@@ -105,7 +104,7 @@ REST API 형태로 통신 가능
 
 new-embodiment: 새로운/커스텀 로봇 설정
 
-6. --data-config so101
+- --data-config so101
 
 데이터 구성 설정
 
@@ -212,6 +211,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
