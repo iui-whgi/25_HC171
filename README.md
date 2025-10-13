@@ -74,7 +74,7 @@ python scripts/inference_service.py \
     --data-config so101
 터미널에서 위 명령어를 실행하여 모델 서버 실행
 ### 각 파라미터 설명
-- **python scripts/inference_service.py**
+- **'python scripts/inference_service.py'**:
 
 추론 서비스 스크립트 실행
 
@@ -230,6 +230,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
