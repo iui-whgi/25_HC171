@@ -20,7 +20,7 @@ MetaQuest_Teleopearation(숭실대팀) - 텔레오퍼레이션했던거 다정�
 ## 캘리브레이션
 직접 작성한 calibrate.sh 파일 실행하여 캘리브레이션
 
-로봇의 그리퍼를 벌리고, 로봇팔을 최대한 ㄱ자로 만든 뒤에 진행할 것
+로봇의 그리퍼를 벌리고, 로봇팔을 최대한 'ㄱ'자로 만든 뒤에 진행할 것
 
 이후, 모터의 최대 구동 범위까지 움직여줄 것
 ### 팔로워 로봇 캘리브레이션 
@@ -64,9 +64,54 @@ lerobot-calibrate \
 
 클라우드: --dataset.repo_id로 Hugging Face Hub에 업로드
 # TrainAndDelpoy
+## 서버 실행
+python scripts/inference_service.py \
+    --server \
+    --http-server \
+    --model-path {모델 경로} \
+    --embodiment-tag new-embodiment \
+    --data-config so101
+터미널에서 위 명령어를 실행하여 서버 실행
+### 각 파라미터 설명
+1. python scripts/inference_service.py
 
----
+추론 서비스 스크립트 실행
 
+학습된 모델을 로드하고 서버로 실행
+
+2. --server
+
+서버 모드로 실행
+
+로봇의 요청을 받아 AI 추론 결과를 반환
+
+3. --http-server
+
+HTTP 프로토콜 사용
+
+REST API 형태로 통신 가능
+
+로봇이 HTTP 요청으로 다음 동작을 물어봄
+
+4. --model-path {모델 경로}
+
+학습된 모델의 경로 지정
+
+5. --embodiment-tag new-embodiment
+
+로봇의 물리적 구성(embodiment) 태그
+
+같은 모델을 다른 로봇 구성에 적용할 때 사용
+
+new-embodiment: 새로운/커스텀 로봇 설정
+
+6. --data-config so101
+
+데이터 구성 설정
+
+so101: SO-101 로봇용 데이터 형식
+
+입력 데이터(카메라, 관절 상태 등)의 구조 정의
 # MetaQuest_Teleopearation
 
 ## 개요
@@ -167,6 +212,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
