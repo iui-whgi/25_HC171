@@ -68,8 +68,8 @@ lerobot-calibrate \
 python scripts/inference_service.py \
     --server \
     --http-server \
-    --model-path {모델 경로} \
-    --embodiment-tag new-embodiment \
+    --model-path {체크포인트 경로} \
+    --embodiment-tag new_embodiment \
     --data-config so101
 터미널에서 위 명령어를 실행하여 서버 실행
 ### 각 파라미터 설명
@@ -211,6 +211,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
