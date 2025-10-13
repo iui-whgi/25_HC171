@@ -1,4 +1,4 @@
-﻿# CookingBot
+<img width="2340" height="1317" alt="image" src="https://github.com/user-attachments/assets/618bd059-d885-403a-a401-dbc90367aa8e" />﻿# CookingBot
 
 
 각자 맡은 파트 자세히 명세해주세요.
@@ -14,7 +14,8 @@ MetaQuest_Teleopearation(숭실대팀) - 텔레오퍼레이션했던거 다정�
 #이 Read Me에 각 디렉별 설명 다 기입해주시면됩니다 . 다 이 제일상위 Readme에 다 명세해주세요
 
 # DataCollection
-<img width="2340" height="1317" alt="image" src="https://github.com/user-attachments/assets/90ee638f-0714-4c63-bd67-697596a55255" />
+![Uploading image.gif…]()
+
 
 리더, 팔로우 로봇 캘리브레이션 후, 직접 작성한 record.sh 파일 실행하여 데이터셋 수집
 
@@ -169,6 +170,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
