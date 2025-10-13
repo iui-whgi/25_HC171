@@ -74,21 +74,21 @@ python scripts/inference_service.py \
     --data-config so101
 터미널에서 위 명령어를 실행하여 모델 서버 실행
 ### 각 파라미터 설명
-- **'python scripts/inference_service.py'**
+- **python scripts/inference_service.py**
 
 추론 서비스 스크립트 실행
 
 학습된 모델을 로드하고 서버로 실행
 
 
-- **'--server'**
+- **--server**
 
 서버 모드로 실행
 
 로봇의 요청을 받아 AI 추론 결과를 반환
 
 
-- **'--http-server'**
+- **--http-server**
 
 HTTP 프로토콜 사용
 
@@ -97,12 +97,12 @@ REST API 형태로 통신 가능
 로봇이 HTTP 요청으로 다음 동작을 물어봄
 
 
-- **'--model-path {모델 경로}'**
+- **--model-path {모델 경로}**
 
 학습된 모델의 경로 지정
 
 
-- **'--embodiment-tag new-embodiment'**
+- **--embodiment-tag new-embodiment**
 
 로봇의 물리적 구성(embodiment) 태그
 
@@ -111,7 +111,7 @@ REST API 형태로 통신 가능
 new-embodiment: 새로운/커스텀 로봇 설정
 
 
-- **'--data-config so101'**
+- **--data-config so101**
 
 데이터 구성 설정
 
@@ -122,12 +122,12 @@ so101: SO-101 로봇용 데이터 형식
 데이터셋 수집과 마찬가지로 USB 포트 번호를 통해 팔로워 로봇 설정해준 뒤, 카메라 인덱스 설정
 
 
-**'--policy_host=localhost & --policy_port=5555'** 를 통해 AI 모델이 실행 중인 서버 위치를 지정
+**--policy_host=localhost & --policy_port=5555** 를 통해 AI 모델이 실행 중인 서버 위치를 지정
 
 이후 localhost:5555에서 실행 중인 inference 서버와 연결하면 이 서버가 로봇에게 다음에 어떻게 움직여야 할지 알려줌
 
 
-**'--lang_instruction'** 을 통해 AI에게 주는 작업 지시
+**--lang_instruction** 을 통해 AI에게 주는 작업 지시
 
 GR00T N1의 Vision-Language Model이 이 지시를 이해하고 실행
 # MetaQuest_Teleopearation
@@ -230,6 +230,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
