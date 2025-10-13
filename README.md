@@ -15,6 +15,8 @@ MetaQuest_Teleopearation(숭실대팀) - 텔레오퍼레이션했던거 다정�
 
 # DataCollection
 리더, 팔로우 로봇 캘리브레이션 후, 직접 작성한 record.sh 파일 실행하여 데이터셋 수집
+
+이때, ls /dev/ttyACM* 명령어를 실행하여 USB 시리얼 포트를 확인
 ## 캘리브레이션
 직접 작성한 calibrate.sh 파일 실행하여 캘리브레이션
 
@@ -27,7 +29,7 @@ lerobot-calibrate \
     --robot.left_arm_port=/dev/ttyACM0 \    
     --robot.right_arm_port=/dev/ttyACM1 \
     --robot.id=dual_so101
-### 리더 로봇
+### 리더 로봇 캘리브레이션
 lerobot-calibrate \
     --teleop.type=bi_so101_leader \
     --teleop.left_arm_port=/dev/ttyACM2 \
@@ -47,6 +49,8 @@ lerobot-calibrate \
 
 설정 위치: lerobot/common/robot_devices/robots/configs.py - BiSO101LeaderConfig 클래스
 ### 카메라: 4대의 OpenCV 카메라
+카메라 인덱스는 find_cameras.py 코드를 통해 확인
+
 정면 카메라: index 0
 
 상단 카메라: index 2
@@ -163,6 +167,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
