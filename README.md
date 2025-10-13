@@ -14,11 +14,11 @@ MetaQuest_Teleopearation(숭실대팀) - 텔레오퍼레이션했던거 다정�
 #이 Read Me에 각 디렉별 설명 다 기입해주시면됩니다 . 다 이 제일상위 Readme에 다 명세해주세요
 
 # DataCollection
-리더, 팔로우 로봇 캘리브레이션 후, 직접 작성한 record.sh 파일 실행하여 데이터셋 수집
+리더, 팔로우 로봇 캘리브레이션 후, record.sh 파일 실행하여 데이터셋 수집
 
 이때, ls /dev/ttyACM* 명령어를 실행하여 USB 시리얼 포트를 확인
 ## 캘리브레이션
-직접 작성한 calibrate.sh 파일 실행하여 캘리브레이션
+calibrate.sh 파일 실행하여 캘리브레이션
 
 로봇의 그리퍼를 벌리고, 로봇팔을 최대한 'ㄱ'자로 만든 뒤에 진행할 것
 
@@ -64,6 +64,7 @@ lerobot-calibrate \
 
 클라우드: --dataset.repo_id로 Hugging Face Hub에 업로드
 # TrainAndDelpoy
+모델 서버 실행한 후, eval.sh 파일 실행하여 로봇 실행
 ## 서버 실행
 python scripts/inference_service.py \
     --server \
@@ -71,7 +72,7 @@ python scripts/inference_service.py \
     --model-path {체크포인트 경로} \
     --embodiment-tag new_embodiment \
     --data-config so101
-터미널에서 위 명령어를 실행하여 서버 실행
+터미널에서 위 명령어를 실행하여 모델 서버 실행
 ### 각 파라미터 설명
 - python scripts/inference_service.py
 
@@ -111,6 +112,16 @@ new-embodiment: 새로운/커스텀 로봇 설정
 so101: SO-101 로봇용 데이터 형식
 
 입력 데이터(카메라, 관절 상태 등)의 구조 정의
+## 로봇 실행
+데이터셋 수집과 마찬가지로 USB 포트 번호를 통해 팔로워 로봇 설정해준 뒤, 카메라 인덱스 설정
+
+--policy_host=localhost & --policy_port=5555 를 통해 AI 모델이 실행 중인 서버 위치를 지정
+
+이후 localhost:5555에서 실행 중인 inference 서버와 연결하면 이 서버가 로봇에게 다음에 어떻게 움직여야 할지 알려줌
+
+--lang_instruction 을 통해 AI에게 주는 작업 지시
+
+GR00T N1의 Vision-Language Model이 이 지시를 이해하고 실행
 # MetaQuest_Teleopearation
 
 ## 개요
@@ -211,6 +222,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
