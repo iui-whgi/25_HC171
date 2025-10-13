@@ -14,15 +14,33 @@ MetaQuest_Teleopearation(숭실대팀) - 텔레오퍼레이션했던거 다정�
 #이 Read Me에 각 디렉별 설명 다 기입해주시면됩니다 . 다 이 제일상위 Readme에 다 명세해주세요
 
 # DataCollection
-직접 작성한 record.sh 파일 실행하여 데이터셋 수집
+리더, 팔로우 로봇 캘리브레이션 후, 직접 작성한 record.sh 파일 실행하여 데이터셋 수집
+## 캘리브레이션
+직접 작성한 calibrate.sh 파일 실행하여 캘리브레이션
+
+로봇의 그리퍼를 벌리고, 로봇팔을 최대한 ㄱ자로 만든 뒤에 진행할 것
+
+이후, 모터의 최대 구동 범위까지 움직여줄 것
+### 팔로워 로봇 캘리브레이션 
+lerobot-calibrate \
+    --robot.type=bi_so101_follower \
+    --robot.left_arm_port=/dev/ttyACM0 \    
+    --robot.right_arm_port=/dev/ttyACM1 \
+    --robot.id=dual_so101
+### 리더 로봇
+lerobot-calibrate \
+    --teleop.type=bi_so101_leader \
+    --teleop.left_arm_port=/dev/ttyACM2 \
+    --teleop.right_arm_port=/dev/ttyACM3 \
+    --teleop.id=dual_leader_so101
 ## 하드웨어 구성
-### Follower 로봇 (bi_so101_follower)
+### 팔로워 로봇 (bi_so101_follower)
 왼팔: /dev/ttyACM0
 
 오른팔: /dev/ttyACM1
 
 설정 위치: lerobot/common/robot_devices/robots/configs.py - BiSO101FollowerConfig 클래스
-### Leader 로봇 (bi_so101_leader)
+### 리더 로봇 (bi_so101_leader)
 왼팔: /dev/ttyACM2
 
 오른팔: /dev/ttyACM3
@@ -145,6 +163,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
