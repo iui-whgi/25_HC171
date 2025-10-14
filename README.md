@@ -197,7 +197,7 @@ Meta Quest 2 → [USB] → Docker(ROS1) → [TCP:12345] → MuJoCo
 
 
 <details>
-    <summary>MetaQuest_Teleopearation 파일구조조</summary>
+    <summary>MetaQuest_Teleopearation 파일구조</summary>
 
 <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
 
@@ -265,6 +265,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
