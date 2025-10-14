@@ -16,6 +16,38 @@ https://huggingface.co/JisooSong
   <img src="https://github.com/user-attachments/assets/16122e49-710c-4e9e-ad2c-60a0b3e6f54e" width="700" height="auto">
 </p>
 
+<details>
+    <summary>하드웨어 구성</summary>
+
+<!-- summary 아래 한칸 공백 두고 내용 삽입 -->
+
+## 하드웨어 구성
+### 팔로워 로봇 (bi_so101_follower)
+왼팔: /dev/ttyACM0
+
+오른팔: /dev/ttyACM1
+
+설정 위치: lerobot/common/robot_devices/robots/configs.py - BiSO101FollowerConfig 클래스
+### 리더 로봇 (bi_so101_leader)
+왼팔: /dev/ttyACM2
+
+오른팔: /dev/ttyACM3
+
+설정 위치: lerobot/common/robot_devices/robots/configs.py - BiSO101LeaderConfig 클래스
+### 카메라: 4대의 OpenCV 카메라
+카메라 인덱스는 find_cameras.py 코드를 통해 확인
+
+정면 카메라: index 0
+
+상단 카메라: index 2
+
+왼쪽 카메라: index 4
+
+오른쪽 카메라: index 6
+
+
+  
+</details>
 우선, 아래 명령어를 실행해 USB 시리얼 포트를 확인합니다.
 ```
 ls /dev/ttyACM*
@@ -56,39 +88,6 @@ lerobot-calibrate \
 ```
 cd DataCollection && source scripts/record.sh
 ```
-
-<details>
-    <summary>하드웨어 구성</summary>
-
-<!-- summary 아래 한칸 공백 두고 내용 삽입 -->
-
-## 하드웨어 구성
-### 팔로워 로봇 (bi_so101_follower)
-왼팔: /dev/ttyACM0
-
-오른팔: /dev/ttyACM1
-
-설정 위치: lerobot/common/robot_devices/robots/configs.py - BiSO101FollowerConfig 클래스
-### 리더 로봇 (bi_so101_leader)
-왼팔: /dev/ttyACM2
-
-오른팔: /dev/ttyACM3
-
-설정 위치: lerobot/common/robot_devices/robots/configs.py - BiSO101LeaderConfig 클래스
-### 카메라: 4대의 OpenCV 카메라
-카메라 인덱스는 find_cameras.py 코드를 통해 확인
-
-정면 카메라: index 0
-
-상단 카메라: index 2
-
-왼쪽 카메라: index 4
-
-오른쪽 카메라: index 6
-
-
-  
-</details>
 
 ## 데이터셋 저장
 로컬: --dataset.root에 지정한 경로
@@ -296,6 +295,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
