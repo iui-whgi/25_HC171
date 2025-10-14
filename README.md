@@ -4,7 +4,7 @@
 
 
 # DataCollection
-<img width="2340" height="1317" alt="image" src="https://github.com/user-attachments/assets/ac569167-1c96-42c8-901a-3e141f45d5d9" />
+![KakaoTalk_20251013_004928553](https://github.com/user-attachments/assets/16122e49-710c-4e9e-ad2c-60a0b3e6f54e)
 
 리더, 팔로우 로봇 캘리브레이션 후, record.sh 파일 실행하여 데이터셋 수집
 
@@ -222,6 +222,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
