@@ -12,19 +12,22 @@
 </p>
 
 
-리더, 팔로우 로봇 캘리브레이션 후, record.sh 파일 실행하여 데이터셋 수집
+리더, 팔로우 로봇 캘리브레이션 후, 아래 명령어를 실행해 데이터셋을 수집할 수 있습니다.
 ```
 cd DataCollection/lerobot-BiSO101 && source scripts/record.sh
 ```
-이때, ls /dev/ttyACM* 명령어를 실행하여 USB 시리얼 포트를 확인
+이때, 아래 명령어를 실행해 USB 시리얼 포트를 확인합니다.
+```
+ls /dev/ttyACM*
+```
 ## 캘리브레이션
-calibrate.sh 파일 실행하여 캘리브레이션
+아래 명령어를 실행해해 캘리브레이션을 진행할 수 있습니다.
 ```
 cd DataCollection/lerobot-BiSO101 && source scripts/calibrate.sh
 ```
-로봇의 그리퍼를 벌리고, 로봇팔을 최대한 'ㄱ'자로 만든 뒤에 진행할 것
+캘리브레이션 시에 로봇의 그리퍼를 벌리고, 로봇팔을 최대한 'ㄱ'자로 만든 뒤에 진행해야 합니다.
 
-이후, 모터의 최대 구동 범위까지 움직여줄 것
+이후, 모터의 최대 구동 범위까지 움직여줍니다.
 ### 팔로워 로봇 캘리브레이션 
 ```
 lerobot-calibrate \
@@ -155,7 +158,7 @@ cd TrainAndDeploy/Issac-GR00T-BiSO101 && bash shell/eval.sh
 </details>
 
 ## 로봇 실행
-데이터셋 수집과 마찬가지로 USB 포트 번호를 통해 팔로워 로봇 설정해준 뒤, 카메라 인덱스 설정
+우선, 데이터셋 수집과 마찬가지로 USB 포트 번호를 통해 팔로워 로봇 설정해준 뒤, 카메라 인덱스를 설정합니다.
 
 
 **--policy_host=localhost & --policy_port=5555** 를 통해 AI 모델이 실행 중인 서버 위치를 지정
@@ -283,6 +286,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
