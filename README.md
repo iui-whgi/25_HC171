@@ -150,7 +150,10 @@ Meta Quest 2 → [USB] → Docker(ROS1) → [TCP:12345] → MuJoCo
 ## 시연 영상
 
 ### Single Arm VR 제어
-![Single Arm Demo](MetaQuest_Teleopearation/assets/IMG_1756.gif)
+<p align="center">
+  <img src="MetaQuest_Teleopearation/assets/IMG_1756.gif" width="700" height="auto" alt="Single Arm Demo">
+</p>
+
 
 *Meta Quest 2 VR 컨트롤러로 한팔 OpenManipulator-X 로봇을 실시간 제어*
 
@@ -226,6 +229,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
