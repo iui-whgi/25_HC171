@@ -8,6 +8,8 @@
 
 ### 데이터셋 관리
 https://huggingface.co/JisooSong
+<img width="1870" height="1298" alt="image" src="https://github.com/user-attachments/assets/07091726-c999-4c74-8067-2284a74ca822" />
+
 
 # DataCollection
 <p align="center">
@@ -289,6 +291,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
