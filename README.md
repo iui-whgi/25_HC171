@@ -52,6 +52,7 @@ lerobot-calibrate \
     --teleop.id=dual_leader_so101
 ```
 ## 데이터셋 수집
+터미널에서 아래 명령어를 실행해 데이터셋을 수집할 수 있습니다.
 ```
 cd DataCollection && source scripts/record.sh
 ```
@@ -295,6 +296,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
