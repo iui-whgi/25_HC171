@@ -1,5 +1,7 @@
 
 # DataCollection
+<img width="2340" height="1317" alt="image" src="https://github.com/user-attachments/assets/ac569167-1c96-42c8-901a-3e141f45d5d9" />
+
 리더, 팔로우 로봇 캘리브레이션 후, record.sh 파일 실행하여 데이터셋 수집
 
 이때, ls /dev/ttyACM* 명령어를 실행하여 USB 시리얼 포트를 확인
@@ -216,6 +218,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
