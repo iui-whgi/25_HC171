@@ -45,7 +45,7 @@ lerobot-calibrate \
 
 
 <details>
-    <summary>하드웨어 구성성</summary>
+    <summary>하드웨어 구성</summary>
 
 <!-- summary 아래 한칸 공백 두고 내용 삽입 -->
 
@@ -283,6 +283,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
