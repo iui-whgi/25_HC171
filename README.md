@@ -85,9 +85,11 @@ lerobot-calibrate \
 
 클라우드: --dataset.repo_id로 Hugging Face Hub에 업로드
 # TrainAndDelpoy
-로봇에 모델 배포 시 두 개의 터미널을 사용한다.
-한 개는 서버실행, 한 개는 sh파일 실행에 쓰인다
+로봇에 모델 배포 시, 두 개의 터미널을 사용합니다.
+
+한 개는 서버실행, 한 개는 sh파일 실행에 사용됩니다.
 ## 서버 실행
+터미널에서 아래 명령어를 실행하여 모델 서버 실행합니다.
 ```
 python scripts/inference_service.py \
     --server \
@@ -96,12 +98,10 @@ python scripts/inference_service.py \
     --embodiment-tag new_embodiment \
     --data-config so101
 ```
-새로운 터미널을 생성후 아래 코드를 입력한다
+새로운 터미널을 생성 후 아래 명령어를 실행하여 로봇을 실행시킬 수 있습니다.
 ```
 cd TrainAndDeploy/Issac-GR00T-BiSO101 && bash shell/eval.sh
 ```
-
-터미널에서 위 명령어를 실행하여 모델 서버 실행
 
 
 <details>
@@ -286,6 +286,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
