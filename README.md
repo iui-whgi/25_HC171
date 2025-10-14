@@ -210,7 +210,7 @@ Meta Quest 2 → [USB] → Docker(ROS1) → [TCP:12345] → MuJoCo
 ### Dual Arm VR 텔레오퍼레이션
 ![Dual Arm Demo](MetaQuest_Teleopearation/assets/IMG_1862.gif)
 
-* 실제 양팔 로봇 텔레오퍼레이션 *
+*실제 양팔 로봇 텔레오퍼레이션*
 
 
 ## 주요 성과
@@ -293,6 +293,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
