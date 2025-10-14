@@ -48,6 +48,7 @@ https://huggingface.co/JisooSong
 
   
 </details>
+
 우선, 아래 명령어를 실행해 USB 시리얼 포트를 확인합니다.
 ```
 ls /dev/ttyACM*
@@ -295,6 +296,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
