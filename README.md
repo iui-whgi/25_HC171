@@ -1,10 +1,14 @@
 
 ## https://youtu.be/FMgU_Z2daZs?si=NH6PZwmL2qrZCTWO
-<img width="1989" height="1117" alt="image" src="https://github.com/user-attachments/assets/2bb29113-8727-4c94-9818-f9b232b0c370" />
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/2bb29113-8727-4c94-9818-f9b232b0c370" width="900" height="auto">
+</p>
 
 # DataCollection
-![KakaoTalk_20251013_004928553](https://github.com/user-attachments/assets/16122e49-710c-4e9e-ad2c-60a0b3e6f54e)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/16122e49-710c-4e9e-ad2c-60a0b3e6f54e" width="900" height="auto">
+</p>
+
 
 리더, 팔로우 로봇 캘리브레이션 후, record.sh 파일 실행하여 데이터셋 수집
 
@@ -222,6 +226,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
