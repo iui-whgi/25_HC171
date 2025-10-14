@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Agent Call — Minimal</title>
+  <style>
+    :root{ 
+      --bg: #e8e8e8; 
+      --fg: #333333; 
+      --muted: #666666; 
+      --ring: #ff6b35; 
+      --ok: #37e0a1; 
+      --err: #ff6b6b; 
+      --disc: 420px; 
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; 
+      background: #e8e8e8; 
+      color:var(--fg); 
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Apple Color Emoji
+    }    .wrap{min-height:100svh; display:flex; flex-direction:column;}
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px 12px;
+      position: relative;
+    }
+
+    .back-button {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-size: 24px;
+      color: var(--fg);
+      border-radius: 50%;
+      transition: background-color 0.2s ease;
+    }
+
+    .back-button:hover {
+      background-color: rgba(51, 51, 51, 0.1);
+    }
+
+    .header-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--fg);
+    }
+    
+    .main-content {
+      flex: 1;
+      display: grid;
+      place-items: center;
+    }
+
+    /* —— Center Dial —— */
+    .center{ position:relative; display:grid; gap:18px; place-items:center; }
+    .dial{ 
+      position: relative; 
+      width: var(--disc); 
+      height: var(--disc); 
+      border-radius: 999px; 
+      display: grid; 
+      place-items: center; 
+      overflow: hidden; 
+    }
+    .dial.isRecording::after{ 
+      content: ""; 
+      position: absolute; 
+      inset: -2px; 
+      border: 2px solid var(--ring); 
+      border-radius: inherit; 
+      animation: pulse-ring 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) infinite; 
+      pointer-events: none; 
+    }
+    .discCore {
+      position: absolute; 
+      inset: 0; 
+      border-radius: 50%; 
+      background: radial-gradient(circle at 40% 40%,
+              #fff7e6 0%,
+              #ffd580 40%,
+              #ff914d 70%,
+              #ff5e00 100%); 
+      box-shadow: 0 0 40px rgba(255, 150, 50, 0.4);
+      transform: translateZ(0);
+    }
+    canvas.vis{ 
+      position:absolute; 
+      inset:0; 
+      width:100%; 
+      height:100%; 
+      border-radius:inherit; 
+      filter:blur(.5px) contrast(105%); 
+      pointer-events:none; 
+    }
+    @keyframes spin{ to{ transform:rotate(360deg) } }
+    @keyframes pulse-ring {
+      0% {
+        transform: scale(0.33);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 0;
+      }
+    }
+    .callBtn{ 
+      position:relative; 
+      z-index:3; 
+      border:0; 
+      cursor:pointer; 
+      padding:14px 22px; 
+      border-radius:999px;
+      background: rgba(255,255,255,.9); 
+      color: var(--fg); 
+      font-weight:600; 
+      letter-spacing:.2px; 
+      display:flex; 
+      align-items:center; 
+      gap:10px;
+      box-shadow: 0 10px 26px rgba(0,0,0,.15), inset 0 0 0 1px rgba(255,255,255,.8);
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .callBtn:hover{ 
+      transform:translateY(-1px); 
+      box-shadow: 0 12px 30px rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.9); 
+    }
+    .callBtn.connected{ 
+      background: linear-gradient(180deg, #ff914d, #ff6b35);
+      color: #ffffff; 
+      box-shadow: 0 16px 40px rgba(255,107,53,.35); 
+    }
+
+    .statusbar{ 
+      display:flex; 
+      gap:10px; 
+      align-items:center; 
+      justify-content:center; 
+      color:var(--muted); 
+    }
+    .dot{ 
+      width:10px; 
+      height:10px; 
+      border-radius:999px; 
+      background:#999999; 
+      box-shadow:0 0 0 2px rgba(0,0,0,.1) inset 
+    }
+    .dot.ok{ background:var(--ok) }
+    .dot.err{ background:var(--err) }
+
+    /* Advanced is floating and unobtrusive */
+    details.adv{ 
+      position:fixed; 
+      left:24px; 
+      bottom:22px; 
+      color:var(--muted); 
+      max-width:min(720px,92vw) 
+    }
+    details.adv > summary{ 
+      cursor:pointer; 
+      list-style:none; 
+      padding:6px 0; 
+      font-size:12px; 
+      opacity:.9 
+    }
+    .card{ 
+      background: rgba(255,255,255,.9); 
+      border:1px solid rgba(0,0,0,.1); 
+      border-radius:16px; 
+      padding:14px; 
+    }
+    .grid{ 
+      display:grid; 
+      grid-template-columns:1fr auto auto; 
+      gap:10px; 
+      align-items:center 
+    }
+    input[type=text]{ 
+      width:100%; 
+      min-width:220px; 
+      background: rgba(255,255,255,.8); 
+      color: var(--fg); 
+      border:1px solid rgba(0,0,0,.2); 
+      border-radius:12px; 
+      padding:10px 12px; 
+    }
+    label{ font-size:12px }
+    #log{ 
+      height:220px; 
+      overflow:auto; 
+      margin-top:10px; 
+      background: rgba(255,255,255,.8); 
+      border:1px solid rgba(0,0,0,.1); 
+      border-radius:12px; 
+      padding:10px 
+    }
+    .msg{ margin:6px 0; line-height:1.45 }
+    .small{ font-size:18px }
+
+    @media (max-width:560px){ :root{ --disc: 320px } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="header">
+      <button class="back-button" onclick="goBack()">←</button>
+      <h1 class="header-title">🥪샌드위치 주문하기🥪</h1>
+    </header>
+    
+    <div class="main-content">
+      <section class="center">
+        <div class="dial" id="dial">
+          <canvas id="vis" class="vis"></canvas>
+          <div class="discCore" id="discCore"></div>
+          <button id="callBtn" class="callBtn" aria-pressed="false">주문 하기</button>
+        </div>
+        <div class="statusbar">
+          <span class="dot" id="dot"></span>
+          <span id="status">대기</span>
+        </div>
+      </section>
+    </div>
+
+    <details class="adv">
+      <summary>텍스트로 주문하기</summary>
+      <div class="card">
+        <div class="grid">
+          <div>
+            <label class="small">Agent ID</label>
+            <input id="agentId" type="text" value="agent_3401k38gf2mkfjy9wnxjv1cpq8wz" />
+          </div>
+          <label><input id="voiceToggle" type="checkbox" checked /> 음성 사용</label>
+          <label><input id="autoHangup" type="checkbox" checked /> 자동 종료(30s)</label>
+        </div>
+        <div style="margin-top:10px" class="small">HTTPS(또는 localhost)에서 동작. 인증된 에이전트는 Signed URL 필요.</div>
+        <div id="log" class="small"></div>
+        <div class="grid" style="grid-template-columns:1fr auto auto; margin-top:10px">
+          <input id="textInput" type="text" placeholder="텍스트로 전송 (Enter)" />
+          <button id="btnSend" class="small" style="cursor:pointer">전송</button>
+          <button id="btnClear" class="small" style="cursor:pointer">로그 지우기</button>
+        </div>
+      </div>
+    </details>
+  </main>
+
+  <script>
+    // ====== BASIC CONFIG ======
+    const USE_SIGNED_URL = false; // 인증된(비공개) 에이전트면 true로 변경하세요.
+    const SIGNED_URL_ENDPOINT = "/api/eleven-signed-url"; // 서버가 { signed_url } 반환
+    const USER_AUDIO_SAMPLE_RATE = 16000; // PCM16k in/out
+    const CHUNK_SAMPLES = 320; // 20ms @ 16k
+    const AUTO_HANGUP_MS = 30_000;
+
+    // ====== UI ELEMENTS ======
+    const dot = document.getElementById('dot');
+    const statusEl = document.getElementById('status');
+    const logEl = document.getElementById('log');
+    const textInput = document.getElementById('textInput');
+    const btnSend = document.getElementById('btnSend');
+    const btnClear = document.getElementById('btnClear');
+    const callBtn = document.getElementById('callBtn');
+    const dial = document.getElementById('dial');
+    const discCore = document.getElementById('discCore');
+    const agentIdInput = document.getElementById('agentId');
+    const voiceToggle = document.getElementById('voiceToggle');
+    const autoHangupToggle = document.getElementById('autoHangup');
+
+    // ====== STATE ======
+    let ws = null; let connected = false; let lastActivity = Date.now(); let autoHangTimer = null;
+    let audioCtx = null; let mediaStream = null; let workletNode = null; let inSampleRate = 48000;
+    let sendBuffer = new Int16Array(0); let nextPlaybackTime = 0;
+
+    // ====== VISUALIZER (water ripple) ======
+    const vis = document.getElementById('vis');
+    const vctx = vis.getContext('2d');
+    let ripples = []; // {r, v, a, color}
+    let amp = 0; // 0..1
+    function resizeVis(){ const dpr=window.devicePixelRatio||1; const w=vis.clientWidth, h=vis.clientHeight; vis.width = Math.floor(w*dpr); vis.height = Math.floor(h*dpr); vctx.setTransform(dpr,0,0,dpr,0,0); }
+    window.addEventListener('resize', resizeVis); resizeVis();
+    function addRipple(strength, role){
+      const s = Math.min(1, Math.max(0, (strength - 0.01) / 0.28));
+      if (s <= 0) return; amp = Math.max(amp, s);
+      ripples.push({ r: 10 + 8*s, v: 180 + s*300, a: 0.22 + s*0.35, color: role==='agent' ? 'rgba(255,140,0,1)' : 'rgba(255,200,120,1)'});
+    }
+    let lastT = performance.now();
+    function loop(t){
+      const dt = Math.min(0.05, (t-lastT)/1000); lastT = t;
+      // decay amplitude and scale core
+      amp *= Math.pow(0.9, dt*60);
+      
+      // 음성 크기에 따라 다이얼(dial)과 중앙 코어(discCore)의 크기를 모두 조절합니다.
+      const dialScale = 1 + amp * 0.05; // 다이얼이 약간 더 크게 움직임
+      const coreScale = 1 + amp * 0.12; // 코어는 더 민감하게 움직임
+      
+      dial.style.transform = `scale(${dialScale.toFixed(3)})`;
+      discCore.style.transform = `scale(${coreScale.toFixed(3)})`;
+      
+      // draw ripples
+      vctx.clearRect(0,0,vis.clientWidth, vis.clientHeight);
+      const cx = vis.clientWidth/2, cy = vis.clientHeight/2; // CSS pixels
+      for (let i=ripples.length-1;i>=0;i--) {
+        const rp = ripples[i];
+        rp.r += rp.v*dt; rp.a *= Math.pow(0.93, dt*60);
+        if (rp.a < 0.02 || rp.r > Math.min(cx,cy)) { ripples.splice(i,1); continue; }
+        vctx.beginPath(); vctx.arc(cx, cy, rp.r, 0, Math.PI*2);
+        vctx.strokeStyle = rp.color; vctx.globalAlpha = Math.min(0.85, rp.a);
+        vctx.lineWidth = 2 + rp.r*0.015; vctx.stroke(); vctx.globalAlpha = 1;
+      }
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+
+    // ====== UTIL ======
+    function log(line){ const d=document.createElement('div'); d.className='msg'; d.innerHTML=line; logEl.appendChild(d); logEl.scrollTop = logEl.scrollHeight; }
+    function setStatus(ok,text){ dot.classList.toggle('ok', !!ok); dot.classList.toggle('err', !ok && text?.toLowerCase().includes('에러')); statusEl.textContent=text; }
+    function escapeHtml(str){ return str.replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;' }[c])); }
+
+    function floatToInt16(float32){ const out=new Int16Array(float32.length); for(let i=0;i<float32.length;i++){ let s=Math.max(-1,Math.min(1,float32[i])); out[i] = s<0 ? s*0x8000 : s*0x7fff; } return out; }
+    function int16ToBase64(int16){ const bytes=new Uint8Array(int16.buffer); let bin=''; const chunk=0x8000; for(let i=0;i<bytes.length;i+=chunk){ bin += String.fromCharCode.apply(null, bytes.subarray(i,i+chunk)); } return btoa(bin); }
+    function base64ToInt16(b64){ const bin=atob(b64); const bytes=new Uint8Array(bin.length); for(let i=0;i<bin.length;i++) bytes[i]=bin.charCodeAt(i); return new Int16Array(bytes.buffer); }
+    function resampleFloatTo16k(float32,fromRate){ if(fromRate===USER_AUDIO_SAMPLE_RATE) return floatToInt16(float32); const ratio=USER_AUDIO_SAMPLE_RATE/fromRate; const newLen=Math.floor(float32.length*ratio); const out=new Float32Array(newLen); for(let i=0;i<newLen;i++){ const t=i/ratio; const i0=Math.floor(t); const i1=Math.min(i0+1,float32.length-1); const f=t-i0; out[i]=float32[i0]*(1-f)+float32[i1]*f; } return floatToInt16(out); }
+    function appendInt16(a,b){ const out=new Int16Array(a.length+b.length); out.set(a,0); out.set(b,a.length); return out; }
+    function rmsF32(arr){ let s=0; for(let i=0;i<arr.length;i++){ const v=arr[i]; s += v*v; } return Math.sqrt(s/arr.length); }
+    function rmsI16(arr){ let s=0; for(let i=0;i<arr.length;i++){ const v=arr[i]/0x8000; s += v*v; } return Math.sqrt(s/arr.length); }
+
+    // ====== AUDIO CAPTURE (Worklet -> Fallback) ======
+    async function startMic(){ if (mediaStream) return;
+      audioCtx = audioCtx || new (window.AudioContext||window.webkitAudioContext)({ sampleRate:48000 });
+      let workletLoaded=false;
+      if (audioCtx.audioWorklet){
+        try{
+          const blob=new Blob([`class PCMProcessor extends AudioWorkletProcessor{process(inputs){const ch=inputs[0]; if(ch&&ch[0]){ this.port.postMessage(ch[0]); } return true;}}; registerProcessor('pcm-processor',PCMProcessor);`],{type:'application/javascript; charset=utf-8'});
+          const url=URL.createObjectURL(blob); await audioCtx.audioWorklet.addModule(url); URL.revokeObjectURL(url); workletLoaded=true;
+        }catch(err){ console.warn('AudioWorklet 로드 실패, 폴백 사용:',err); }
+      }
+      mediaStream = await navigator.mediaDevices.getUserMedia({audio:true});
+      const src=audioCtx.createMediaStreamSource(mediaStream); inSampleRate=audioCtx.sampleRate;
+      dial.classList.add('isRecording');
+      if (workletLoaded){ workletNode=new AudioWorkletNode(audioCtx,'pcm-processor'); workletNode.port.onmessage=(e)=>{ const f32=e.data; onFloat32Frame(f32); const r=rmsF32(f32); addRipple(r,'user'); }; src.connect(workletNode); return; }
+      const processor=audioCtx.createScriptProcessor(2048,1,1); processor.onaudioprocess=(ev)=>{ const ch0=ev.inputBuffer.getChannelData(0); onFloat32Frame(ch0); const r=rmsF32(ch0); addRipple(r,'user'); };
+      const silence=audioCtx.createGain(); silence.gain.value=0; src.connect(processor); processor.connect(silence); silence.connect(audioCtx.destination);
+    }
+    function stopMic(){ if(mediaStream){ for(const t of mediaStream.getTracks()) t.stop(); } mediaStream=null; if(workletNode) workletNode.disconnect(); workletNode=null; dial.classList.remove('isRecording'); }
+    function onFloat32Frame(float32){ if(!ws||ws.readyState!==WebSocket.OPEN) return; const pcm16=resampleFloatTo16k(float32,inSampleRate); sendBuffer=appendInt16(sendBuffer,pcm16); while(sendBuffer.length>=CHUNK_SAMPLES){ const chunk=sendBuffer.subarray(0,CHUNK_SAMPLES); sendBuffer=sendBuffer.subarray(CHUNK_SAMPLES); ws.send(JSON.stringify({ user_audio_chunk:int16ToBase64(chunk) })); } }
+
+    // ====== AUDIO PLAYBACK ======
+    function ensureCtx(){ audioCtx = audioCtx || new (window.AudioContext||window.webkitAudioContext)({ sampleRate:48000 }); }
+    function schedulePcm16Playback(int16){ ensureCtx(); const sr=USER_AUDIO_SAMPLE_RATE; const f32=new Float32Array(int16.length); for(let i=0;i<int16.length;i++) f32[i]=Math.max(-1,Math.min(1,int16[i]/0x8000)); const buf=audioCtx.createBuffer(1,f32.length,sr); buf.copyToChannel(f32,0); const src=audioCtx.createBufferSource(); src.buffer=buf; src.connect(audioCtx.destination); const now=audioCtx.currentTime; const startAt=Math.max(now,nextPlaybackTime); src.start(startAt); nextPlaybackTime=startAt+buf.duration; const r=rmsI16(int16); addRipple(r,'agent'); }
+
+    // ====== WS CONNECTION ======
+    async function getWsUrl(agentId){ if(USE_SIGNED_URL){ const r=await fetch(`${SIGNED_URL_ENDPOINT}?agent_id=${encodeURIComponent(agentId)}`); const j=await r.json(); if(!j.signed_url) throw new Error('signed_url이 없습니다.'); return j.signed_url; } return `wss://api.elevenlabs.io/v1/convai/conversation?agent_id=${encodeURIComponent(agentId)}`; }
+
+    async function connect(){ if(connected) return; const agentId=agentIdInput.value.trim(); if(!agentId) return alert('Agent ID를 입력하세요.');
+      if(voiceToggle.checked){ try{ await startMic(); } catch(e){ alert('마이크 권한 실패: '+e.message); return; } }
+      const url=await getWsUrl(agentId); ws=new WebSocket(url);
+      ws.onopen=()=>{ connected=true; setStatus(true,'연결됨'); callBtn.classList.add('connected'); callBtn.setAttribute('aria-pressed','true'); callBtn.textContent='중단 하기'; lastActivity=Date.now(); if(autoHangupToggle.checked) startAutoHangTimer(); ws.send(JSON.stringify({ type:'conversation_initiation_client_data' })); log(`<span class="small">➡️ init sent</span>`); };
+      ws.onmessage=(ev)=>{ lastActivity=Date.now(); const data = JSON.parse(ev.data);
+        if(data.type==='ping' && data.ping_event?.event_id!=null){ ws.send(JSON.stringify({ type:'pong', event_id:data.ping_event.event_id })); return; }
+        if(data.type==='conversation_initiation_metadata'){ log(`<div class=\"msg small\">✅ 세션 시작 — in:${data.conversation_initiation_metadata_event.user_input_audio_format}, out:${data.conversation_initiation_metadata_event.agent_output_audio_format}</div>`); return; }
+        if(data.type==='user_transcript'){ const t=data.user_transcription_event?.user_transcript; if(t) log(`<div class=\"msg\"><b>사용자</b> ${escapeHtml(t)}</div>`); return; }
+        if(data.type==='agent_response'){ const t=data.agent_response_event?.agent_response; if(t) log(`<div class=\"msg\"><b>Agent</b> ${escapeHtml(t)}</div>`); return; }
+        if(data.type==='audio'){ const b64=data.audio_event?.audio_base_64; if(b64){ const int16=base64ToInt16(b64); schedulePcm16Playback(int16);} return; }
+        if(data.type==='client_tool_call'){ log(`<div class=\"msg small\">🛠️ Tool call: <code>${escapeHtml(JSON.stringify(data.client_tool_call))}</code></div>`); return; }
+      };
+      ws.onerror=(e)=>{ setStatus(false,'에러'); log(`<div class=\"msg\">⌐ <b>에러</b> ${escapeHtml(String(e?.message||'WebSocket error'))}</div>`); };
+      ws.onclose=()=>{ connected=false; setStatus(false,'연결 끊김'); callBtn.classList.remove('connected'); callBtn.setAttribute('aria-pressed','false'); callBtn.textContent='주문 하기'; stopMic(); sendBuffer=new Int16Array(0); nextPlaybackTime=0; clearInterval(autoHangTimer); autoHangTimer=null; };
+    }
+
+    function disconnect(){ if(ws && ws.readyState===WebSocket.OPEN) ws.close(); }
+    function startAutoHangTimer(){ clearInterval(autoHangTimer); autoHangTimer=setInterval(()=>{ if(!connected) return; const idle=Date.now()-lastActivity; if(idle> AUTO_HANGUP_MS){ log(`<div class=\"msg small\">⏹ 자동 종료(무응답 ${AUTO_HANGUP_MS/1000}s)</div>`); disconnect(); } },1000); }
+
+    function sendText(){ if(!ws || ws.readyState!==WebSocket.OPEN) return; const text=textInput.value.trim(); if(!text) return; ws.send(JSON.stringify({ type:'user_message', text })); log(`<div class=\"msg\"><b>사용자</b> ${escapeHtml(text)}</div>`); textInput.value=''; }
+
+    // ====== WIRE UP ======
+    callBtn.addEventListener('click', ()=>{ connected ? disconnect() : connect(); });
+    btnSend.addEventListener('click', sendText);
+    textInput?.addEventListener('keydown', (e)=>{ if(e.key==='Enter') sendText(); });
+    btnClear.addEventListener('click', ()=>{ logEl.innerHTML=''; });
+    window.addEventListener('click', ()=>{ if(audioCtx && audioCtx.state==='suspended') audioCtx.resume(); }, { once:false });
+  </script>
+</body>
+</html>
