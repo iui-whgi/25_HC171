@@ -81,51 +81,61 @@ eval.sh
 ```
 
 터미널에서 위 명령어를 실행하여 모델 서버 실행
-### 각 파라미터 설명
-- **python scripts/inference_service.py**
-
-추론 서비스 스크립트 실행
-
-학습된 모델을 로드하고 서버로 실행
 
 
-- **--server**
+<details>
+    <summary>각 파라미터 설명</summary>
 
-서버 모드로 실행
-
-로봇의 요청을 받아 AI 추론 결과를 반환
-
-
-- **--http-server**
-
-HTTP 프로토콜 사용
-
-REST API 형태로 통신 가능
-
-로봇이 HTTP 요청으로 다음 동작을 물어봄
+<!-- summary 아래 한칸 공백 두고 내용 삽입 -->
 
 
-- **--model-path {모델 경로}**
+ - **python scripts/inference_service.py**
+  
+  추론 서비스 스크립트 실행
+  
+  학습된 모델을 로드하고 서버로 실행
+  
+  
+  - **--server**
+  
+  서버 모드로 실행
+  
+  로봇의 요청을 받아 AI 추론 결과를 반환
+  
+  
+  - **--http-server**
+  
+  HTTP 프로토콜 사용
+  
+  REST API 형태로 통신 가능
+  
+  로봇이 HTTP 요청으로 다음 동작을 물어봄
+  
+  
+  - **--model-path {모델 경로}**
+  
+  학습된 모델의 경로 지정
+  
+  
+  - **--embodiment-tag new-embodiment**
+  
+  로봇의 물리적 구성(embodiment) 태그
+  
+  같은 모델을 다른 로봇 구성에 적용할 때 사용
+  
+  new-embodiment: 새로운/커스텀 로봇 설정
+  
+  
+  - **--data-config so101**
+  
+  데이터 구성 설정
+  
+  so101: SO-101 로봇용 데이터 형식
+  
+  입력 데이터(카메라, 관절 상태 등)의 구조 정의
+  
+</details>
 
-학습된 모델의 경로 지정
-
-
-- **--embodiment-tag new-embodiment**
-
-로봇의 물리적 구성(embodiment) 태그
-
-같은 모델을 다른 로봇 구성에 적용할 때 사용
-
-new-embodiment: 새로운/커스텀 로봇 설정
-
-
-- **--data-config so101**
-
-데이터 구성 설정
-
-so101: SO-101 로봇용 데이터 형식
-
-입력 데이터(카메라, 관절 상태 등)의 구조 정의
 ## 로봇 실행
 데이터셋 수집과 마찬가지로 USB 포트 번호를 통해 팔로워 로봇 설정해준 뒤, 카메라 인덱스 설정
 
@@ -244,6 +254,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
