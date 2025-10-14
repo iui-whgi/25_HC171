@@ -16,15 +16,15 @@ https://huggingface.co/JisooSong
   <img src="https://github.com/user-attachments/assets/16122e49-710c-4e9e-ad2c-60a0b3e6f54e" width="700" height="auto">
 </p>
 
-
-리더, 팔로우 로봇 캘리브레이션 후, 아래 명령어를 실행해 데이터셋을 수집할 수 있습니다.
-```
-cd DataCollection/lerobot-BiSO101 && source scripts/record.sh
-```
-이때, 아래 명령어를 실행해 USB 시리얼 포트를 확인합니다.
+우선, 아래 명령어를 실행해 USB 시리얼 포트를 확인합니다.
 ```
 ls /dev/ttyACM*
 ```
+다음으로 아래 명령어를 실행하여 카메라 인덱스를 확인합니다.
+```
+cd DataCollection/src/lerobot && python find_cameras.py
+```
+위의 작업들을 완료하면 리더, 팔로우 로봇 캘리브레이션 후, 아래 명령어를 실행해 데이터셋을 수집할 수 있습니다.
 ## 캘리브레이션
 아래 명령어를 실행해해 캘리브레이션을 진행할 수 있습니다.
 ```
@@ -49,8 +49,10 @@ lerobot-calibrate \
     --teleop.right_arm_port=/dev/ttyACM3 \
     --teleop.id=dual_leader_so101
 ```
-
-
+## 데이터셋 수집
+```
+cd DataCollection && source scripts/record.sh
+```
 
 <details>
     <summary>하드웨어 구성</summary>
@@ -105,7 +107,7 @@ python scripts/inference_service.py \
 ```
 새로운 터미널을 생성 후 아래 명령어를 실행하여 로봇을 실행시킬 수 있습니다.
 ```
-cd TrainAndDeploy/Issac-GR00T-BiSO101 && bash shell/eval.sh
+cd TrainAndDeploy && bash shell/eval.sh
 ```
 
 
@@ -291,6 +293,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
