@@ -1,18 +1,4 @@
 
-
-
-각자 맡은 파트 자세히 명세해주세요.
-
-DataCollection (지수씨) - Isaac ~Bimanaul  파일넣어주세요
-TrainAndDelpoy (지수씨) - Gr00t 디렉토리 넣어주세요 
-MetaQuest_Teleopearation(숭실대팀) - 텔레오퍼레이션했던거 다정리해주세요
-
-각자 명세하신후 우영이가 지수씨 파트를 더 보완하고 , 종합적으로는 숭실대 팀이 맡아서 관리좀해주세요. 
-
-
-
-#이 Read Me에 각 디렉별 설명 다 기입해주시면됩니다 . 다 이 제일상위 Readme에 다 명세해주세요
-
 # DataCollection
 리더, 팔로우 로봇 캘리브레이션 후, record.sh 파일 실행하여 데이터셋 수집
 
@@ -230,6 +216,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
