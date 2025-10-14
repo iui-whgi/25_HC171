@@ -11,11 +11,15 @@
 
 
 리더, 팔로우 로봇 캘리브레이션 후, record.sh 파일 실행하여 데이터셋 수집
-
+'''
+cd lerobot-BiSO101 && source scripts/record.sh
+'''
 이때, ls /dev/ttyACM* 명령어를 실행하여 USB 시리얼 포트를 확인
 ## 캘리브레이션
 calibrate.sh 파일 실행하여 캘리브레이션
-
+'''
+cd lerobot-BiSO101 && source scripts/calibrate.sh
+'''
 로봇의 그리퍼를 벌리고, 로봇팔을 최대한 'ㄱ'자로 만든 뒤에 진행할 것
 
 이후, 모터의 최대 구동 범위까지 움직여줄 것
@@ -77,7 +81,7 @@ python scripts/inference_service.py \
 ```
 새로운 터미널을 생성후 아래 코드를 입력한다
 ```
-eval.sh
+cd Issac-GR00T-BiSO101 && bash shell/eval.sh
 ```
 
 터미널에서 위 명령어를 실행하여 모델 서버 실행
@@ -265,6 +269,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
