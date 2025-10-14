@@ -182,6 +182,9 @@ Meta Quest 2 → [USB] → Docker(ROS1) → [TCP:12345] → MuJoCo
 
 ## 디렉토리 구조 및 설명
 
+<img width="2375" height="1450" alt="image" src="https://github.com/user-attachments/assets/06ed5365-9f08-4b98-aa1a-f4a0b51f1b89" />
+
+
 ### `vr_teleoperation/`
 VR 텔레오퍼레이션 메인 시스템
 
@@ -241,6 +244,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
