@@ -41,6 +41,14 @@ lerobot-calibrate \
     --teleop.right_arm_port=/dev/ttyACM3 \
     --teleop.id=dual_leader_so101
 ```
+
+
+
+<details>
+    <summary>하드웨어 구성성</summary>
+
+<!-- summary 아래 한칸 공백 두고 내용 삽입 -->
+
 ## 하드웨어 구성
 ### 팔로워 로봇 (bi_so101_follower)
 왼팔: /dev/ttyACM0
@@ -64,6 +72,10 @@ lerobot-calibrate \
 왼쪽 카메라: index 4
 
 오른쪽 카메라: index 6
+
+
+  
+</details>
 
 ## 데이터셋 저장
 로컬: --dataset.root에 지정한 경로
@@ -271,6 +283,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
