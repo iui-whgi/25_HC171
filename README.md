@@ -75,7 +75,7 @@ python scripts/inference_service.py \
     --embodiment-tag new_embodiment \
     --data-config so101
 ```
-새로운 터미널을 열어서 아래코드 실행한다
+또 다른 터미널을 열어서 아래코드 실행한다
 ```
 eval.sh
 ```
@@ -265,6 +265,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
