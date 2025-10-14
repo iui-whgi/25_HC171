@@ -1,4 +1,4 @@
-### 유튜브 시연영상
+# 유튜브 시연영상
 ### https://youtu.be/FMgU_Z2daZs?si=NH6PZwmL2qrZCTWO
 <p align="center">
   <a href="https://youtu.be/FMgU_Z2daZs?si=NH6PZwmL2qrZCTWO" target="_blank">
@@ -271,6 +271,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
