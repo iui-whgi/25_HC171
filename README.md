@@ -195,6 +195,12 @@ Meta Quest 2 → [USB] → Docker(ROS1) → [TCP:12345] → MuJoCo
 <img width="2375" height="1450" alt="image" src="https://github.com/user-attachments/assets/06ed5365-9f08-4b98-aa1a-f4a0b51f1b89" />
 
 
+
+<details>
+    <summary>MetaQuest_Teleopearation 파일구조조</summary>
+
+<!-- summary 아래 한칸 공백 두고 내용 삽입 -->
+
 ### `vr_teleoperation/`
 VR 텔레오퍼레이션 메인 시스템
 
@@ -241,6 +247,17 @@ VR-로봇 매핑 데이터 수집 도구
 - **`openmanipulator_examples/`**: OpenManipulator-X 기본 예제
 - **`aloha_examples/`**: ALOHA 로봇 관련 예제
 
+  
+</details>
+
+## 상세 설명 (링크 클릭하시면 상세한 설명이 있습니다.)
+- [VR 시스템 상세](MetaQuest_Teleopearation/vr_teleoperation/README.md)
+- [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
+- [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
+- [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
+
+
 ## 기술 스택
 - **VR**: Meta Quest 2, quest2ros
 - **로봇**: OpenManipulator-X (Dynamixel XM430-W350)
@@ -249,11 +266,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
 
-## 상세 설명 (링크 클릭하시면 상세한 설명이 있습니다.)
-- [VR 시스템 상세](MetaQuest_Teleopearation/vr_teleoperation/README.md)
-- [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
-- [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
-- [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
