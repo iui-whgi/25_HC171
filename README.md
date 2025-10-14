@@ -202,18 +202,15 @@ Meta Quest 2 → [USB] → Docker(ROS1) → [TCP:12345] → MuJoCo
 
 ## 시연 영상
 
-### Single Arm VR 제어
-<p align="center">
-  <img src="MetaQuest_Teleopearation/assets/IMG_1756.gif" width="700" height="auto" alt="Single Arm Demo">
-</p>
+### MuJoCo Simulation 텔레오퍼레이션
+![MuJoCo Dual Arm Simulation](MetaQuest_Teleopearation/assets/IMG_1808.gif)
 
+*MuJoCo 시뮬레이션 환경에서 양팔 로봇 텔레오퍼레이션*
 
-*Meta Quest 2 VR 컨트롤러로 한팔 OpenManipulator-X 로봇을 실시간 제어*
-
-### Dual Arm VR 제어
+### Dual Arm VR 텔레오퍼레이션
 ![Dual Arm Demo](MetaQuest_Teleopearation/assets/IMG_1862.gif)
 
-*양팔 로봇 동시 제어 *
+* 실제 양팔 로봇 텔레오퍼레이션 *
 
 
 ## 주요 성과
