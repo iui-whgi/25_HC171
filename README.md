@@ -60,14 +60,22 @@ lerobot-calibrate \
 
 클라우드: --dataset.repo_id로 Hugging Face Hub에 업로드
 # TrainAndDelpoy
-모델 서버 실행한 후, eval.sh 파일 실행하여 로봇 실행
+로봇에 배포시 두개의 터미널을 사용한다.
+한개는 서버실행, 한개는 sh파일 실행에 쓰인다
 ## 서버 실행
+```
 python scripts/inference_service.py \
     --server \
     --http-server \
     --model-path {체크포인트 경로} \
     --embodiment-tag new_embodiment \
     --data-config so101
+```
+새로운 터미널을 열어서 아래코드 실행한다
+```
+eval.sh
+```
+
 터미널에서 위 명령어를 실행하여 모델 서버 실행
 ### 각 파라미터 설명
 - **python scripts/inference_service.py**
@@ -229,6 +237,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
