@@ -6,6 +6,17 @@
   </a>
 </p>
 
+### 데이터셋 관리 유튜브 시연영상
+### https://youtu.be/FMgU_Z2daZs?si=NH6PZwmL2qrZCTWO
+<p align="center">
+  <a href="https://youtu.be/FMgU_Z2daZs?si=NH6PZwmL2qrZCTWO" target="_blank">
+    <img src="https://github.com/user-attachments/assets/2bb29113-8727-4c94-9818-f9b232b0c370" width="700" height="auto">
+  </a>
+</p>
+
+### 데이터셋 관리
+https://huggingface.co/JisooSong
+
 # DataCollection
 <p align="center">
   <img src="https://github.com/user-attachments/assets/16122e49-710c-4e9e-ad2c-60a0b3e6f54e" width="700" height="auto">
@@ -286,6 +297,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
