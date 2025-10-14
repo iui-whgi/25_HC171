@@ -69,8 +69,8 @@ lerobot-calibrate \
 
 클라우드: --dataset.repo_id로 Hugging Face Hub에 업로드
 # TrainAndDelpoy
-로봇에 배포시 두개의 터미널을 사용한다.
-한개는 서버실행, 한개는 sh파일 실행에 쓰인다
+로봇에 모델 배포 시 두 개의 터미널을 사용한다.
+한 개는 서버실행, 한 개는 sh파일 실행에 쓰인다
 ## 서버 실행
 ```
 python scripts/inference_service.py \
@@ -270,6 +270,7 @@ VR-로봇 매핑 데이터 수집 도구
 - **시뮬레이션**: MuJoCo 2.3+
 - **언어**: Python 3.10+
 - **OS**: Ubuntu 22.04
+
 
 
 
