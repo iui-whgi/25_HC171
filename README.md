@@ -20,17 +20,21 @@ calibrate.sh 파일 실행하여 캘리브레이션
 
 이후, 모터의 최대 구동 범위까지 움직여줄 것
 ### 팔로워 로봇 캘리브레이션 
+```
 lerobot-calibrate \
     --robot.type=bi_so101_follower \
     --robot.left_arm_port=/dev/ttyACM0 \    
     --robot.right_arm_port=/dev/ttyACM1 \
     --robot.id=dual_so101
+```
 ### 리더 로봇 캘리브레이션
+```
 lerobot-calibrate \
     --teleop.type=bi_so101_leader \
     --teleop.left_arm_port=/dev/ttyACM2 \
     --teleop.right_arm_port=/dev/ttyACM3 \
     --teleop.id=dual_leader_so101
+```
 ## 하드웨어 구성
 ### 팔로워 로봇 (bi_so101_follower)
 왼팔: /dev/ttyACM0
@@ -237,6 +241,7 @@ VR-로봇 매핑 데이터 수집 도구
 - [하드웨어 설정](MetaQuest_Teleopearation/open_manipulator/HARDWARE_SETUP_GUIDE.md)
 - [Docker 설정](MetaQuest_Teleopearation/docker/docker-setup-guide.md)
 - [데이터 수집](MetaQuest_Teleopearation/data/README.md)
+
 
 
 
