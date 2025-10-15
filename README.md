@@ -28,8 +28,8 @@
 **1-6. 기술 스택**
 - 하드웨어 : 3D프린팅, openCR 1.0, Dynamixel(모터 XM430-W350), RGB 카메라
 - 앱개발 : Python(FastAPI), Eleven Labs, HTML, Stitch/Figma
-- 데이터수집/강화학습: Ubuntu 22.04(ROS2 Humble), Docker(ROS1 noetic), Mujoco, Groot N1, ROSbag, HuggingFace
-- 배포 및 관리 : GitHub(코드), Notion(회의록), Google Dirve(문서작업)
+- 데이터수집/강화학습: Ubuntu 22.04(ROS2 Humble), Docker(ROS1 noetic), Mujoco, Groot N1, ROSbag
+- 배포 및 관리 : GitHub(코드), Notion(회의록), Google Dirve(문서작업), HuggingFace(데이터셋)
 
 ---
 ## **💡2. 팀원 소개**
@@ -110,6 +110,7 @@
 
 - 초기 위치 기준으로 변화량만 확인 후, 로봇팔 동작</br>
 <img width="657" height="565" alt="zzzz" src="https://github.com/user-attachments/assets/3de4a639-9027-4904-8ec0-2d39523643a6" /></br>
+
 
 
 
