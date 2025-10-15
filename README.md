@@ -38,9 +38,6 @@
 | **서우영** | **손창우** | **백정훈** | **오민재** | **윤중현** | **이경용** |
 | • 강화학습 <br> • 백엔드 | • 개발총괄 <br> • 강화학습 | • 하드웨어 설계 <br> • 하드웨어 제작 |• 하드웨어 제작 <br> • 데이터셋 추출 | • 앱개발 <br> • 데이터셋 추출 | • 프로젝트 멘터 <br> • 기술 자문 |
 
-![손창우](https://github.com/user-attachments/assets/2947cd40-49dc-4845-b602-cebe30b9c98a)
-
-
 
 ---
 ## **💡3. 시스템 구성도**
@@ -79,5 +76,6 @@
 - robot control
 
 <img width="657" height="565" alt="zzzz" src="https://github.com/user-attachments/assets/3de4a639-9027-4904-8ec0-2d39523643a6" />
+
 
 
