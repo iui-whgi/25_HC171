@@ -70,13 +70,13 @@
 - 엑츄에이터 정의</br>
 <img width="900" height="142" alt="액추에이터" src="https://github.com/user-attachments/assets/b88b5ef9-c540-43db-817b-0d201fa2c074" /></br>
 
--.act 파일을 읽어 재생 시간 데이터와 액추에이터 제어 입력 시퀀스를 로드</br>
+- .act 파일을 읽어 재생 시간 데이터와 액추에이터 제어 입력 시퀀스를 로드</br>
 <img width="497" height="432" alt="act파일읽어시퀌스뭐시기저시기" src="https://github.com/user-attachments/assets/d67b19d5-8b95-4f7d-85e4-9bc4f058a425" /></br>
 
--보간한 제어 입력을 Mujoco 액추에이터에 적용해 시뮬레이션을 한 단계 진행</br>
+- 보간한 제어 입력을 Mujoco 액추에이터에 적용해 시뮬레이션을 한 단계 진행</br>
 <img width="441" height="250" alt="보간한 제어입력" src="https://github.com/user-attachments/assets/27e1db5b-d295-425b-b9c7-5d405cecba02" /></br>
 
--Bag 파일로부터 관절 위치 데이터 로드</br>
+- Bag 파일로부터 관절 위치 데이터 로드</br>
 <img width="390" height="492" alt="bag파일로부터 관절위치데이터로드" src="https://github.com/user-attachments/assets/f04e63ac-e802-4a5e-83ec-abbdddf44ad9" /></br>
 
 - actuator mapping & .act 변환</br>
@@ -85,7 +85,7 @@
 - VR-joint 매핑 데이터 구축</br>
 <img width="482" height="557" alt="VR-joint매핑" src="https://github.com/user-attachments/assets/3f564fbd-1291-4ad5-96ab-dafa80121ff7" /></br>
 
--KD-tree 구성 및 VR 델타값 계산</br>
+- KD-tree 구성 및 VR 델타값 계산</br>
 <img width="491" height="560" alt="KDtree구성 vr계산" src="https://github.com/user-attachments/assets/3acaa775-3f1a-46a3-b531-7016b01bf701" /></br>
 
 - KD-tree 알고리즘</br>
@@ -93,21 +93,22 @@
 
 <img width="657" height="561" alt="image" src="https://github.com/user-attachments/assets/ffa95885-1180-4620-9740-d5f1d6dbe6e4" /></br>
 
--소켓 서버 설정(Mujoco 연결 대기)</br>
+- 소켓 서버 설정(Mujoco 연결 대기)</br>
 <img width="487" height="283" alt="소켓서버설정" src="https://github.com/user-attachments/assets/e4f4dd2a-bb79-4bcd-bf9c-cf52f1a4f07a" /></br>
 
--ROS 토픽구독(VR데이터 입력)</br>
+- ROS 토픽구독(VR데이터 입력)</br>
 <img width="485" height="257" alt="ROS토픽구독" src="https://github.com/user-attachments/assets/dc6381f5-6b35-423c-ab66-853998373600" /></br>
 
--Mujoco로 데이터 전송 및 제어루프</br>
+- Mujoco로 데이터 전송 및 제어루프</br>
 <img width="546" height="601" alt="mujoco데이터전송" src="https://github.com/user-attachments/assets/65ab43f1-f9b4-4ebf-a543-4d6463f0bd5c" /></br>
 
--실제 로봇과 Mujoco 환경을 동기화</br>
+- 실제 로봇과 Mujoco 환경을 동기화</br>
 <img width="546" height="601" alt="실제로봇mujoco환경동기화" src="https://github.com/user-attachments/assets/d1720111-fab3-4690-87b7-c0bf8a6ec2f2" /></br>
 
--실제 로봇의 초기위치 값 기억</br>
+- 실제 로봇의 초기위치 값 기억</br>
 <img width="440" height="247" alt="실제로봇 초기위치" src="https://github.com/user-attachments/assets/93987adc-7af3-431a-b01b-08953b3aafc9" /></br>
 
 - 초기 위치 기준으로 변화량만 확인 후, 로봇팔 동작</br>
 <img width="657" height="565" alt="zzzz" src="https://github.com/user-attachments/assets/3de4a639-9027-4904-8ec0-2d39523643a6" /></br>
+
 
