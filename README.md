@@ -53,7 +53,7 @@
 
 <img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/3b190ffe-5a2f-4c46-981c-3d585a100384" /></br>
 
-- **앱 서비스**</br>
+- **웹 페이지**</br>
 
 <img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/030db7ef-6ccf-489f-b1f6-55e90b4bb68d" /></br>
 
@@ -110,6 +110,7 @@
 
 - 초기 위치 기준으로 변화량만 확인 후, 로봇팔 동작</br>
 <img width="657" height="565" alt="zzzz" src="https://github.com/user-attachments/assets/3de4a639-9027-4904-8ec0-2d39523643a6" /></br>
+
 
 
 
