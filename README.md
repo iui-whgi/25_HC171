@@ -38,6 +38,12 @@
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | **서우영** | **손창우** | **백정훈** | **오민재** | **윤중현** | **이경용** |
 | • 강화학습 <br> • 백엔드 | • 개발 총괄 <br> • 강화학습 | • 하드웨어 설계 <br> • 하드웨어 제작 |• 하드웨어 제작 <br> • 데이터 셋 추출 | • 앱개발 <br> • 데이터 셋 추출 | • 프로젝트 멘토 <br> • 기술 자문 |
+## **💡2. 팀원 소개**
+| <img width="80" height="100" src="https://github.com/user-attachments/assets/ab73bb1c-c1d4-464d-8ad3-635b45d5a8ae" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/c7f66b7c-ab84-41fa-8fba-b49dba28b677" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/c33252c7-3bf6-43cf-beaa-a9e2d9bd090b" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/0d5909f0-fc73-4ab9-be09-4d48e3e71083" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/c7f66b7c-ab84-41fa-8fba-b49dba28b677" > |
+|:---:|:---:|:---:|:---:|:---:|
+| **서우영** | **손창우** | **백정훈** | **오민재** | **윤중현** | **이경용** |
+| • 강화학습 <br> • 백엔드 | • 개발총괄 <br> • 강화학습 | • 하드웨어 설계 <br> • 하드웨어 제작 |• 하드웨어 제작 <br> • 데이터셋 추출 | • 앱개발 <br> • 데이터셋 추출 | • 프로젝트 멘터 <br> • 기술 자문 |
+
 
 
 
@@ -64,5 +70,6 @@
 [![한이음 드림업 프로젝트 소개](https://github.com/user-attachments/assets/16435f88-e7d3-4e45-a128-3d32648d2d84)](https://youtu.be/YcD3Lbn2FRI?si=isERqIAT9Aqvdqwp)
 ```
 [![한이음 드림업 프로젝트 소개](https://github.com/user-attachments/assets/16435f88-e7d3-4e45-a128-3d32648d2d84)](https://youtu.be/YcD3Lbn2FRI?si=isERqIAT9Aqvdqwp)
+
 
 
