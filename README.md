@@ -44,21 +44,22 @@
 ---
 ## **💡3. 시스템 구성도**
 
-- 하드웨어
-<img width="505" height="247" alt="Image" src="https://github.com/user-attachments/assets/838d832f-f93e-4cc7-9c5d-9f962f466de3" />
+- **하드웨어**
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/838d832f-f93e-4cc7-9c5d-9f962f466de3" /></br>
 
-- 데이터 수집
-<img width="917" height="542" alt="Image" src="https://github.com/user-attachments/assets/61b9fbbf-70be-46db-a72f-c23986836735" />
+- **데이터 수집**
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/61b9fbbf-70be-46db-a72f-c23986836735" /></br>
 
-- 강화학습
-<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/3b190ffe-5a2f-4c46-981c-3d585a100384" />
+- **강화학습**
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/3b190ffe-5a2f-4c46-981c-3d585a100384" /></br>
 
-- 앱 서비스 구성도
-<img width="845" height="503" alt="Image" src="https://github.com/user-attachments/assets/030db7ef-6ccf-489f-b1f6-55e90b4bb68d" />
+- **앱 서비스**
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/030db7ef-6ccf-489f-b1f6-55e90b4bb68d" /></br>
 
 ---
 ## **💡4. 작품 소개영상**
 [![Cooking Robot](https://github.com/user-attachments/assets/bf3d153b-ea08-48a6-86d5-fa1ce0a03ea0)](https://www.youtube.com/watch?v=FMgU_Z2daZs)
+
 
 
 
