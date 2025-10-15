@@ -42,16 +42,20 @@
 ## **💡3. 시스템 구성도**
 
 - **하드웨어**</br>
-<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/838d832f-f93e-4cc7-9c5d-9f962f466de3" />
+
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/838d832f-f93e-4cc7-9c5d-9f962f466de3" /></br>
 
 - **데이터 수집**</br>
-<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/61b9fbbf-70be-46db-a72f-c23986836735" />
+
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/61b9fbbf-70be-46db-a72f-c23986836735" /></br>
 
 - **강화학습**</br>
-<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/3b190ffe-5a2f-4c46-981c-3d585a100384" />
+
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/3b190ffe-5a2f-4c46-981c-3d585a100384" /></br>
 
 - **앱 서비스**</br>
-<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/030db7ef-6ccf-489f-b1f6-55e90b4bb68d" />
+
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/030db7ef-6ccf-489f-b1f6-55e90b4bb68d" /></br>
 
 ---
 ## **💡4. 작품 소개영상**
@@ -59,21 +63,22 @@
 
 ---
 ## **💡5. 핵심 소스코드**
-- 가상환경 내에 로봇팔 정의(왼쪽 기준)
+- 가상환경 내에 로봇팔 정의(왼쪽 기준)</br>
 
-<img width="855" height="408" alt="Image" src="https://github.com/user-attachments/assets/396471b9-c36d-4287-982b-703c81be8281" />
+<img width="855" height="408" alt="Image" src="https://github.com/user-attachments/assets/396471b9-c36d-4287-982b-703c81be8281" /></br>
 
 - actuator mapping & .act 변환
 
-<img width="855" height="408" alt="Image" src="https://github.com/user-attachments/assets/c5252405-4d2f-47e8-88dc-c96cd3cca28c" />
+<img width="855" height="408" alt="Image" src="https://github.com/user-attachments/assets/c5252405-4d2f-47e8-88dc-c96cd3cca28c" /></br>
 
 - KD-tree 알고리즘 (joint4 기준)
 
-<img width="657" height="561" alt="image" src="https://github.com/user-attachments/assets/ffa95885-1180-4620-9740-d5f1d6dbe6e4" />
+<img width="657" height="561" alt="image" src="https://github.com/user-attachments/assets/ffa95885-1180-4620-9740-d5f1d6dbe6e4" /></br>
 
 - robot control
 
-<img width="657" height="565" alt="zzzz" src="https://github.com/user-attachments/assets/3de4a639-9027-4904-8ec0-2d39523643a6" />
+<img width="657" height="565" alt="zzzz" src="https://github.com/user-attachments/assets/3de4a639-9027-4904-8ec0-2d39523643a6" /></br>
+
 
 
 
