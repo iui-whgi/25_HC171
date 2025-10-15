@@ -33,11 +33,10 @@
 
 ---
 ## **💡2. 팀원 소개**
-| <img width="80" height="100" src="https://github.com/user-attachments/assets/ab73bb1c-c1d4-464d-8ad3-635b45d5a8ae" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/2947cd40-49dc-4845-b602-cebe30b9c98a" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/c33252c7-3bf6-43cf-beaa-a9e2d9bd090b" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/0d5909f0-fc73-4ab9-be09-4d48e3e71083" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/c7f66b7c-ab84-41fa-8fba-b49dba28b677" > | <img width="80" height="100" alt="멘토" src="https://github.com/user-attachments/assets/6e89de64-6438-4568-a745-1d404ef9c6f0" > |
+| <img width="80" height="100" src="https://github.com/user-attachments/assets/ab73bb1c-c1d4-464d-8ad3-635b45d5a8ae" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/2947cd40-49dc-4845-b602-cebe30b9c98a" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/c33252c7-3bf6-43cf-beaa-a9e2d9bd090b" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/0d5909f0-fc73-4ab9-be09-4d48e3e71083" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/a9968bc1-31b0-44b6-8b81-ef8681e35488" > | <img width="80" height="100" alt="멘토" src="https://github.com/user-attachments/assets/6e89de64-6438-4568-a745-1d404ef9c6f0" > |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | **서우영** | **손창우** | **백정훈** | **오민재** | **윤중현** | **이경용** |
 | • 강화학습 <br> • 백엔드 | • 개발총괄 <br> • 강화학습 | • 하드웨어 설계 <br> • 하드웨어 제작 |• 하드웨어 제작 <br> • 데이터셋 추출 | • 앱개발 <br> • 데이터셋 추출 | • 프로젝트 멘터 <br> • 기술 자문 |
-
 
 ---
 ## **💡3. 시스템 구성도**
@@ -53,7 +52,6 @@
 
 - **앱 서비스**</br>
 <img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/030db7ef-6ccf-489f-b1f6-55e90b4bb68d" />
-
 
 ---
 ## **💡4. 작품 소개영상**
@@ -76,6 +74,7 @@
 - robot control
 
 <img width="657" height="565" alt="zzzz" src="https://github.com/user-attachments/assets/3de4a639-9027-4904-8ec0-2d39523643a6" />
+
 
 
 
