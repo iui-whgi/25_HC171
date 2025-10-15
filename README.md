@@ -3,6 +3,7 @@
 **1-1. 프로젝트 소개**
 - 프로젝트 명 : 다양한 요리가 가능한 강화학습 기반 요리 로봇 개발
 - 프로젝트 정의 : 어떤한 메뉴가 되던 하나의 하드웨어 장치(로봇팔)로 학습된 모델을 이용해서 어떤 요리든지 가능할 수 있도록 하는 기술개발
+  
   <img width="835" height="460" alt="Image" src="https://github.com/user-attachments/assets/4472a4c9-1271-4526-bde4-07cba5d5a504" /></br>
 
 **1-2. 개발 배경 및 필요성**
@@ -59,6 +60,7 @@
 ---
 ## **💡4. 작품 소개영상**
 [![Cooking Robot](https://github.com/user-attachments/assets/bf3d153b-ea08-48a6-86d5-fa1ce0a03ea0)](https://www.youtube.com/watch?v=FMgU_Z2daZs)
+
 
 
 
