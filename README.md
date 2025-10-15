@@ -63,6 +63,15 @@
 
 ---
 ## **💡5. 핵심 소스코드**
-- 소스코드 설명 : 
+- 가상환경 내에 로봇팔 정의(왼쪽 기준)
 
+<img width="855" height="408" alt="Image" src="https://github.com/user-attachments/assets/396471b9-c36d-4287-982b-703c81be8281" />
+
+- actuator mapping & .act 변환
+
+<img width="855" height="408" alt="Image" src="https://github.com/user-attachments/assets/c5252405-4d2f-47e8-88dc-c96cd3cca28c" />
+
+- KD-tree 알고리즘 (joint4 기준)
+
+<img width="657" height="561" alt="image" src="https://github.com/user-attachments/assets/ffa95885-1180-4620-9740-d5f1d6dbe6e4" />
 
