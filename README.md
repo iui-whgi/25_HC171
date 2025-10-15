@@ -58,12 +58,9 @@
 
 ---
 ## **💡4. 작품 소개영상**
-[![Cooking Robot](유튜브 썸네일 URL)](https://www.youtube.com/watch?v=FMgU_Z2daZs)
+[![Cooking Robot](https://github.com/user-attachments/assets/bf3d153b-ea08-48a6-86d5-fa1ce0a03ea0)](https://www.youtube.com/watch?v=FMgU_Z2daZs)
 
-작성 예시 : 저는 다음과 같이 작성하니, 아래와 같이 링크가 연결된 썸네일 이미지가 등록되었네요! 
-[![한이음 드림업 프로젝트 소개](https://github.com/user-attachments/assets/16435f88-e7d3-4e45-a128-3d32648d2d84)](https://youtu.be/YcD3Lbn2FRI?si=isERqIAT9Aqvdqwp)
-```
-[![한이음 드림업 프로젝트 소개](https://github.com/user-attachments/assets/16435f88-e7d3-4e45-a128-3d32648d2d84)](https://youtu.be/YcD3Lbn2FRI?si=isERqIAT9Aqvdqwp)
+
 
 
 
