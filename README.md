@@ -36,7 +36,7 @@
 | <img width="80" height="100" src="https://github.com/user-attachments/assets/f3dbd480-b7f3-49d7-aaa4-e929b7cc384b" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/2947cd40-49dc-4845-b602-cebe30b9c98a" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/6201ef25-f1a2-49ce-8442-ce85e15a990a" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/c617af9a-110d-4860-accc-49c9206691d7" > | <img width="80" height="100" alt="image" src="https://github.com/user-attachments/assets/a9968bc1-31b0-44b6-8b81-ef8681e35488" > | <img width="80" height="100" alt="멘토" src="https://github.com/user-attachments/assets/6e89de64-6438-4568-a745-1d404ef9c6f0" > |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | **서우영** | **손창우** | **백정훈** | **오민재** | **윤중현** | **이경용** |
-| • 강화학습 <br> • 백엔드 | • 개발총괄 <br> • 강화학습 | • 하드웨어 설계 <br> • 하드웨어 제작 |• 하드웨어 제작 <br> • 데이터셋 추출 | • 앱개발 <br> • 데이터셋 추출 | • 프로젝트 멘터 <br> • 기술 자문 |
+| • 강화학습 <br> • 백엔드 | • 개발총괄 <br> • 강화학습 | • 하드웨어 설계 <br> • 하드웨어 제작 |• 하드웨어 제작 <br> • 데이터셋 추출 | • 프론트엔드 <br> • 데이터셋 추출 | • 프로젝트 멘토 <br> • 기술 자문 |
 
 ---
 ## **💡3. 시스템 구성도**
@@ -78,6 +78,7 @@
 - robot control
 
 <img width="657" height="565" alt="zzzz" src="https://github.com/user-attachments/assets/3de4a639-9027-4904-8ec0-2d39523643a6" /></br>
+
 
 
 
