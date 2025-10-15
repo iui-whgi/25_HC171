@@ -2,8 +2,7 @@
 
 **1-1. 프로젝트 소개**
 - 프로젝트 명 : 다양한 요리가 가능한 강화학습 기반 요리 로봇 개발
-- 프로젝트 정의 : 어떤한 메뉴가 되던 하나의 하드웨어 장치(로봇팔)로 학습된 모델을 이용해서 어떤 요리든지 가능할 수 있도록 하는 기술개발
-  
+- 프로젝트 정의 : 어떤한 메뉴가 되던 하나의 하드웨어 장치(로봇팔)로 학습된 모델을 이용해서 어떤 요리든지 가능할 수 있도록 하는 기술개발</br>  
   <img width="835" height="460" alt="Image" src="https://github.com/user-attachments/assets/4472a4c9-1271-4526-bde4-07cba5d5a504" /></br>
 
 **1-2. 개발 배경 및 필요성**
@@ -45,27 +44,24 @@
 ---
 ## **💡3. 시스템 구성도**
 
-- **하드웨어**
-<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/838d832f-f93e-4cc7-9c5d-9f962f466de3" /></br>
+- **하드웨어**</br>
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/838d832f-f93e-4cc7-9c5d-9f962f466de3" />
 
-- **데이터 수집**
-<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/61b9fbbf-70be-46db-a72f-c23986836735" /></br>
+- **데이터 수집**</br>
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/61b9fbbf-70be-46db-a72f-c23986836735" />
 
-- **강화학습**
-<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/3b190ffe-5a2f-4c46-981c-3d585a100384" /></br>
+- **강화학습**</br>
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/3b190ffe-5a2f-4c46-981c-3d585a100384" />
 
-- **앱 서비스**
-<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/030db7ef-6ccf-489f-b1f6-55e90b4bb68d" /></br>
+- **앱 서비스**</br>
+<img width="657" height="362" alt="Image" src="https://github.com/user-attachments/assets/030db7ef-6ccf-489f-b1f6-55e90b4bb68d" />
+
 
 ---
 ## **💡4. 작품 소개영상**
 [![Cooking Robot](https://github.com/user-attachments/assets/bf3d153b-ea08-48a6-86d5-fa1ce0a03ea0)](https://www.youtube.com/watch?v=FMgU_Z2daZs)
 
-
-
-
-
-
-
-
+---
+## **💡5. 핵심 소스코드**
+- 소스코드 설명 : 
 
