@@ -240,7 +240,7 @@
         <div class="grid">
           <div>
             <label class="small">Agent ID</label>
-            <input id="agentId" type="text" value="agent_3401k38gf2mkfjy9wnxjv1cpq8wz" />
+            <input id="agentId" type="text" value="agent_4101k7h0tqkvebbap2b5c52m2ccy" />
           </div>
           <label><input id="voiceToggle" type="checkbox" checked /> 음성 사용</label>
           <label><input id="autoHangup" type="checkbox" checked /> 자동 종료(30s)</label>
@@ -371,12 +371,35 @@
         if(data.type==='ping' && data.ping_event?.event_id!=null){ ws.send(JSON.stringify({ type:'pong', event_id:data.ping_event.event_id })); return; }
         if(data.type==='conversation_initiation_metadata'){ log(`<div class=\"msg small\">✅ 세션 시작 — in:${data.conversation_initiation_metadata_event.user_input_audio_format}, out:${data.conversation_initiation_metadata_event.agent_output_audio_format}</div>`); return; }
         if(data.type==='user_transcript'){ const t=data.user_transcription_event?.user_transcript; if(t) log(`<div class=\"msg\"><b>사용자</b> ${escapeHtml(t)}</div>`); return; }
-        if(data.type==='agent_response'){ const t=data.agent_response_event?.agent_response; if(t) log(`<div class=\"msg\"><b>Agent</b> ${escapeHtml(t)}</div>`); return; }
+        if(data.type==='agent_response'){ 
+          const t=data.agent_response_event?.agent_response; 
+          if(t) {
+            log(`<div class=\"msg\"><b>Agent</b> ${escapeHtml(t)}</div>`);
+            // Agent 응답에서 주문 정보 추출 시도
+            if (window.extractOrderFromAgentResponse) {
+              window.extractOrderFromAgentResponse(t);
+            }
+          }
+          return; 
+        }
         if(data.type==='audio'){ const b64=data.audio_event?.audio_base_64; if(b64){ const int16=base64ToInt16(b64); schedulePcm16Playback(int16);} return; }
         if(data.type==='client_tool_call'){ log(`<div class=\"msg small\">🛠️ Tool call: <code>${escapeHtml(JSON.stringify(data.client_tool_call))}</code></div>`); return; }
       };
       ws.onerror=(e)=>{ setStatus(false,'에러'); log(`<div class=\"msg\">⌐ <b>에러</b> ${escapeHtml(String(e?.message||'WebSocket error'))}</div>`); };
-      ws.onclose=()=>{ connected=false; setStatus(false,'연결 끊김'); callBtn.classList.remove('connected'); callBtn.setAttribute('aria-pressed','false'); callBtn.textContent='주문 하기'; stopMic(); sendBuffer=new Int16Array(0); nextPlaybackTime=0; clearInterval(autoHangTimer); autoHangTimer=null; };
+      ws.onclose=()=>{ 
+        connected=false; 
+        setStatus(false,'연결 끊김'); 
+        callBtn.classList.remove('connected'); 
+        callBtn.setAttribute('aria-pressed','false'); 
+        callBtn.textContent='주문 하기'; 
+        stopMic(); 
+        sendBuffer=new Int16Array(0); 
+        nextPlaybackTime=0; 
+        clearInterval(autoHangTimer); 
+        autoHangTimer=null; 
+        // 대화 종료 후 완료 페이지로 이동
+        setTimeout(()=>{ window.location.href='/complete'; }, 200);
+      };
     }
 
     function disconnect(){ if(ws && ws.readyState===WebSocket.OPEN) ws.close(); }

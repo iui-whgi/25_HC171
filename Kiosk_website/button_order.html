@@ -1,4 +1,4 @@
-        <div class="recipe-image"></div><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -60,8 +60,6 @@
             font-weight: 700;
             margin-right: 48px;
         }
-
-
 
         .content {
             flex: 1;
@@ -236,8 +234,6 @@
             <h1 class="title">샌드위치 레시피</h1>
         </header>
 
-        <div class="recipe-image"></div>
-
         <div class="content">
             <div class="left-section">
                 <section class="recipe-steps">
@@ -309,9 +305,12 @@
         }
 
         function toggleCheckbox(label) {
+            console.log('toggleCheckbox 함수 호출됨');
             const checkbox = label.previousElementSibling;
             const category = checkbox.dataset.category;
             const item = checkbox.dataset.item;
+            
+            console.log('카테고리:', category, '아이템:', item);
 
             if (category === 'bread') {
                 // 빵은 하나만 선택 가능
@@ -320,34 +319,79 @@
                 
                 checkbox.classList.add('checked');
                 selectedIngredients.bread = item;
+                console.log('빵 선택됨:', item);
             } else if (category === 'vegetable') {
                 // 야채는 여러 개 선택 가능
                 if (checkbox.classList.contains('checked')) {
                     checkbox.classList.remove('checked');
                     selectedIngredients.vegetable = selectedIngredients.vegetable.filter(v => v !== item);
+                    console.log('야채 선택 해제:', item);
                 } else {
                     checkbox.classList.add('checked');
                     selectedIngredients.vegetable.push(item);
+                    console.log('야채 선택됨:', item);
                 }
             }
+            
+            console.log('현재 선택된 재료:', selectedIngredients);
         }
 
-        function saveRecipe() {
+        async function saveRecipe() {
+            console.log('saveRecipe 함수 호출됨');
+            console.log('selectedIngredients:', selectedIngredients);
+            
             if (!selectedIngredients.bread) {
                 alert('빵을 선택해주세요!');
                 return;
             }
 
-            let recipe = `선택된 레시피:\n\n빵: ${getBreadName(selectedIngredients.bread)}`;
-            
-            if (selectedIngredients.vegetable.length > 0) {
-                const vegetableNames = selectedIngredients.vegetable.map(v => getVegetableName(v));
-                recipe += `\n야채: ${vegetableNames.join(', ')}`;
+            // 주문 아이템 구성
+            const items = [];
+
+            // 빵 추가
+            const breadName = getBreadName(selectedIngredients.bread);
+            items.push({ name: breadName });
+
+            // 야채 추가
+            selectedIngredients.vegetable.forEach(veg => {
+                const vegName = getVegetableName(veg);
+                items.push({ name: vegName });
+            });
+
+            // 주문 데이터 구성
+            const orderData = {
+                method: 'button',
+                items: items
+            };
+
+            console.log('주문 데이터:', orderData);
+
+            try {
+                // 서버로 주문 데이터 전송
+                const response = await fetch('/api/order', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(orderData)
+                });
+
+                console.log('서버 응답 상태:', response.status);
+                const result = await response.json();
+                console.log('서버 응답 데이터:', result);
+                
+                if (result.success) {
+                    alert(`주문이 완료되었습니다!\\n주문번호: ${result.order_number}`);
+                    
+                    // 주문 완료 페이지로 이동
+                    window.location.href = '/complete';
+                } else {
+                    throw new Error(result.error || '주문 처리 중 오류가 발생했습니다.');
+                }
+            } catch (e) {
+                console.error('주문 전송 오류:', e);
+                alert('주문 처리 중 오류가 발생했습니다: ' + e.message);
             }
-
-            recipe += '\n\n조리 방법:\n1. 한 쪽 빵 위에 소스를 바른다.\n2. 빵 위에 육류, 채소를 올립니다.\n3. 다른 빵 한 쪽을 위에 올려 마무리 합니다.';
-
-            alert(recipe);
         }
 
         function getBreadName(item) {
